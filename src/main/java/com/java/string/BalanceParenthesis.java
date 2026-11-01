@@ -11,7 +11,7 @@ public class BalanceParenthesis {
         //String input = "(}";
         //String input = "({[{}]})";
         //String input = "[{)}(]";
-        String input  ="[[]{)}(]";
+        String input  ="[[]{)}(]";  //[[]{}()] // [ [{()}] ]
         System.out.println(balance(input));
 
     }
@@ -30,6 +30,7 @@ public class BalanceParenthesis {
         }
         char pop = stack.pop();
         for(char c: input.toCharArray()){
+
                 if (pop == '(' && c == ')') {
                     result.append(pop).append(c);
                     pop = stack.pop();
@@ -39,8 +40,8 @@ public class BalanceParenthesis {
                 } else if (pop == '[' && c == ']') {
                     result.append(pop).append(c);
                 }
-        }
-        //System.out.println(result);
+            }
+          //System.out.println(result);
         return result.toString();
     }
 }
